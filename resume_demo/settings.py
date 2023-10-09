@@ -78,12 +78,18 @@ WSGI_APPLICATION = "resume_demo.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+    
+     'default': {
+        
+         'ENGINE': 'django.db.backends.postgresql',
+         'NAME': 'railway',
+         'USER': 'postgres',
+         'PASSWORD': 'dCYRWiRqpLJTw8TyNzk8',
+         'HOST': 'containers-us-west-58.railway.app',
+         'PORT': '7691',
 
+     }
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -158,3 +164,11 @@ CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 
 # STATIC_URL = "/static/"
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
