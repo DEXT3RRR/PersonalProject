@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-v8bzoj5)*&_%x-yy7o*z-2$*m1uuo*hbtb(n)%@bboej@%wkox
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.verecel.app', '.now.sh', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh,', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -78,16 +78,9 @@ WSGI_APPLICATION = "resume_demo.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    
-    'default': {
-        
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'dCYRWiRqpLJTw8TyNzk8',
-        'HOST': 'containers-us-west-58.railway.app',
-        'PORT': '7691',
-
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -128,10 +121,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"), os.path.join(BASE_DIR, "media")]
 
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "mediafiles"
@@ -142,3 +137,24 @@ MEDIA_ROOT = BASE_DIR / "mediafiles"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+
+
+
+# DATABASES = {
+    
+#     'default': {
+        
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'dCYRWiRqpLJTw8TyNzk8',
+#         'HOST': 'containers-us-west-58.railway.app',
+#         'PORT': '7691',
+
+#     }
+# }
+
+# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+
+# STATIC_URL = "/static/"
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
