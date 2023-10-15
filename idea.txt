@@ -1,0 +1,4 @@
+transfer database in local directory to sqllite/sql database on azure
+once thats complete update settings.py to connect to azure database, make sure the azure endpoint is public
+if that works then you know the back-end works since it can fetch your database
+then watch a youtube video on hosting a python web app in azure, since you already have a work compatible database it shouldn't be that much harder
